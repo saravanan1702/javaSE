@@ -9,12 +9,16 @@ class Student{
     private String Department;
     private static int count=1;
     private String assignRollNo(){
+
         Date d=new Date();
         String aro="Univ-"+(d.getYear()+1900)+"-"+count;
         count++;
         return aro;
     }
-    Student(){
+    Student(String n,String dept)
+    {
+        setName(n);
+        setDepartment(dept);
         RollNo=assignRollNo();
     }
     String getRollNo(){
@@ -65,13 +69,15 @@ class Account{
 }
 public class StudentChallange {
     public static void main(String[] args) {
-     Student s1=new Student(),s2=new Student(),s3=new Student();
-     s1.setName("saravanan");
-     s1.setDepartment("civil");
+     Student s1=new Student("Saravanan","civil"),s2=new Student("Jasmine","Ece"),s3=new Student("Allwin","IT");
+
      s1.studentDetails();
-     s2.setName("Jasmine");
-     s2.setDepartment("Ece");
      s2.studentDetails();
+     Student s4=new Student("Lavanya","Cse");
+     s4.studentDetails();
+        System.out.println("name of the student :"+s1.getName());
+        System.out.println("name of the student RollNO :"+s1.getRollNo());
+
 //     Accounts
         Account ac=new Account(),ac1=new Account(),a3=new Account();
         ac.setName("Jasmine");
@@ -80,6 +86,7 @@ public class StudentChallange {
         a3.display();
         ac.display();
         ac1.display();
+
 
 
 
